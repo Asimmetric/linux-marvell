@@ -130,6 +130,7 @@ config MV_XOR
 	depends on PLAT_ORION
 	select DMA_ENGINE
 	select ASYNC_TX_ENABLE_CHANNEL_SWITCH
+	select LIBCRC32C
 	---help---
 	  Enable support for the Marvell XOR engine.
 

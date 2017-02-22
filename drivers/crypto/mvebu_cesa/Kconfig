@@ -4,6 +4,8 @@ menu "Cesa options"
 config  MV_CESA
 	bool "Support for Marvell Cryptographic Engine and Security Acceleration(CESA)"
 	default y
+	select OCF_OCF
+	select OCF_CRYPTODEV
 
 config  MV_CESA_TOOL_ARMADA
 	bool "Support for Marvell CESA Tool"
