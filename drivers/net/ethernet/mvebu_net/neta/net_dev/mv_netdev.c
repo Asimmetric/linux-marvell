@@ -5308,6 +5308,11 @@ static int mv_force_port_link_speed_fc(int port, MV_ETH_PORT_SPEED port_speed, i
 {
 	struct eth_port *pp = mv_eth_port_by_id(port);
 
+	if (!pp) {
+		printk(KERN_ERR "mv_eth_port_by_id failed\n");
+		return -EIO;
+	}
+
 	if (en_force) {
 		if (mvNetaForceLinkModeSet(port, 1, 0)) {
 			printk(KERN_ERR "mvNetaForceLinkModeSet failed\n");
