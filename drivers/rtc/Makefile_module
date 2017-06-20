@@ -1,0 +1,10 @@
+#
+# Makefile for rtc-armada38x
+#
+obj-m = rtc-armada38x.o
+KVERSION = $(shell uname -r)
+all:
+        make -C /lib/modules/$(KVERSION)/build M=$(PWD) modules
+clean:
+        make -C /lib/modules/$(KVERSION)/build M=$(PWD) clean
+
